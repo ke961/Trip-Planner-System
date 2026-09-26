@@ -1,0 +1,393 @@
+.explore-page {
+  min-height: calc(100vh - 76px);
+  padding: 55px 30px 90px;
+  background: #f8fafc;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.explore-header {
+  max-width: 1200px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.explore-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.explore-header h1 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.explore-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-section {
+  max-width: 850px;
+  margin: 0 auto 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  transition: 0.2s;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-icon {
+  padding-left: 16px;
+  font-size: 16px;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+.search-section > button {
+  height: 52px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-section > button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.search-section > button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-message {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.explore-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+
+/* =========================================
+   RESULTS
+========================================= */
+
+.results-panel {
+  padding: 25px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.panel-label,
+.map-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 21px;
+}
+
+.result-count {
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.no-results {
+  padding: 25px 10px;
+  text-align: center;
+}
+
+.no-results-icon {
+  margin-bottom: 12px;
+  font-size: 35px;
+}
+
+.no-results h3 {
+  margin: 0 0 7px;
+  color: #334155;
+  font-size: 16px;
+}
+
+.no-results p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESULT LIST
+========================================= */
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-card {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.result-card:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+}
+
+.result-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #dbeafe;
+  font-size: 15px;
+}
+
+.result-info {
+  min-width: 0;
+}
+
+.result-info h3 {
+  margin: 0 0 4px;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+.result-info p {
+  margin: 0 0 6px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.result-info span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* =========================================
+   MAP
+========================================= */
+
+.map-section {
+  min-width: 0;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+.map-header {
+  margin-bottom: 15px;
+}
+
+.map-header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* =========================================
+   LEAFLET
+========================================= */
+
+.explore-map {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 500px;
+  position: relative;
+  background: #e5e7eb;
+}
+
+.explore-map .leaflet-tile {
+  width: 256px !important;
+  height: 256px !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block !important;
+}
+
+.explore-map img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.explore-map .leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.explore-map .leaflet-popup {
+  z-index: 1000;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .explore-content {
+    grid-template-columns: 1fr;
+  }
+
+  .results-panel {
+    order: 2;
+  }
+
+  .map-section {
+    order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .explore-page {
+    padding: 40px 15px 70px;
+  }
+
+  .explore-header h1 {
+    font-size: 31px;
+  }
+
+  .explore-header p {
+    font-size: 14px;
+  }
+
+  .search-section {
+    flex-direction: column;
+  }
+
+  .search-section > button {
+    width: 100%;
+  }
+
+  .map-wrapper {
+    height: 400px;
+  }
+
+  .explore-map {
+    min-height: 400px;
+  }
+}
