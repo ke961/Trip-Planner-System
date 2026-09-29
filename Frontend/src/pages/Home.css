@@ -84,7 +84,7 @@
   inset: 0;
 
   background-image:
-    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90");
+    url("../assets/hero-bg.jpg");
 
   background-size: cover;
   background-position: center;
@@ -883,7 +883,7 @@
   inset: 0;
 
   background-image:
-    url("https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=2200&q=85");
+    url("../assets/cta-bg.jpg");
 
   background-size: cover;
   background-position: center;
