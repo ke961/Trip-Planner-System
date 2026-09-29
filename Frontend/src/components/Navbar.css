@@ -150,45 +150,65 @@
 
 
 /* =========================================
-   PLAN A TRIP BUTTON
+   PLAN A TRIP BUTTON (WITH AI RECOMMENDATION)
 ========================================= */
 
 .plan-trip-button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
-  min-width: 110px;
-
+  gap: 7px;
+  min-width: 124px;
   height: 40px;
-
-  padding: 0 18px;
-
-  border-radius: 7px;
-
-  background: #2563eb;
-
+  padding: 0 16px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
   color: #ffffff;
-
   text-decoration: none;
-
   font-size: 13px;
-
   font-weight: 700;
-
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.28);
 }
 
 .plan-trip-button:hover {
-  background: #1d4ed8;
-
+  background: linear-gradient(135deg, #4338ca, #6d28d9);
   color: #ffffff;
-
   transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.42);
+}
 
-  box-shadow:
-    0 5px 12px rgba(37, 99, 235, 0.2);
+.plan-trip-sparkle {
+  font-size: 13px;
+  display: inline-block;
+  animation: sparkleTwinkle 2.5s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2) rotate(15deg);
+    opacity: 1;
+  }
+}
+
+.plan-trip-ai-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 
@@ -251,7 +271,15 @@
   }
 
   .plan-trip-button {
-    display: none;
+    padding: 0 9px;
+    height: 34px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .plan-trip-ai-tag {
+    font-size: 9px;
+    padding: 1px 4px;
   }
 
   .navbar-logo {
