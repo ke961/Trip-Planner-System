@@ -554,7 +554,7 @@
 
 
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
@@ -577,13 +577,70 @@ import middleeastImg from "../assets/destinations/middleeast.jpg";
 import africaImg from "../assets/destinations/africa.jpg";
 import oceaniaImg from "../assets/destinations/oceania.jpg";
 
-// Local images - Backgrounds
-import heroBg from "../assets/hero-bg.jpg";
-import ctaBg from "../assets/cta-bg.jpg";
+
 
 function Home() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+
+  // =========================
+  // TYPEWRITER ANIMATION
+  // =========================
+  const fullText1 = "Your world.";
+  const fullText2 = "Your journey.";
+  const [text1, setText1] = useState("");
+  const [text2, setText2] = useState("");
+
+  useEffect(() => {
+    let timeoutId;
+    let phase = "TYPING_1";
+    let index1 = 0;
+    let index2 = 0;
+
+    const tick = () => {
+      if (phase === "TYPING_1") {
+        if (index1 < fullText1.length) {
+          index1++;
+          setText1(fullText1.slice(0, index1));
+          timeoutId = setTimeout(tick, 75);
+        } else {
+          phase = "PAUSE_BETWEEN";
+          timeoutId = setTimeout(tick, 250);
+        }
+      } else if (phase === "PAUSE_BETWEEN") {
+        phase = "TYPING_2";
+        timeoutId = setTimeout(tick, 100);
+      } else if (phase === "TYPING_2") {
+        if (index2 < fullText2.length) {
+          index2++;
+          setText2(fullText2.slice(0, index2));
+          timeoutId = setTimeout(tick, 75);
+        } else {
+          phase = "HOLD";
+          timeoutId = setTimeout(tick, 7000);
+        }
+      } else if (phase === "HOLD") {
+        phase = "DELETING_2";
+        timeoutId = setTimeout(tick, 40);
+      } else if (phase === "DELETING_2") {
+        if (index2 > 0) {
+          index2--;
+          setText2(fullText2.slice(0, index2));
+          timeoutId = setTimeout(tick, 40);
+        } else {
+          phase = "PAUSE_RESTART";
+          timeoutId = setTimeout(tick, 450);
+        }
+      } else if (phase === "PAUSE_RESTART") {
+        phase = "TYPING_2";
+        timeoutId = setTimeout(tick, 100);
+      }
+    };
+
+    timeoutId = setTimeout(tick, 350);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   // =========================
   // POPULAR DESTINATIONS
@@ -766,15 +823,9 @@ function Home() {
         <div className="hero-overlay"></div>
 
         <div className="hero-content">
-          <div className="hero-badge">
-            <span>✦</span>
-            EXPLORE THE WORLD
-          </div>
-
-          <h1>
-            Your world.
-            <br />
-            <span>Your journey.</span>
+          <h1 className="hero-typewriter-title">
+            <span className="hero-typewriter-line">{text1}</span>
+            <span className="hero-typewriter-line">{text2}</span>
           </h1>
 
           <p className="hero-description">
