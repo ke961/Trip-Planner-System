@@ -40,9 +40,8 @@ function MyTrips() {
       setSavedTrips(data);
 
     } catch (err) {
-
+      console.error("Load trips error:", err);
       setError("Unable to load trips.");
-
     }
   };
 
@@ -126,13 +125,12 @@ function MyTrips() {
       resetForm();
 
     } catch (err) {
-
+      console.error("Save trip error:", err);
       setError(
         editingTripId
           ? "Unable to update trip."
           : "Unable to create trip."
       );
-
     } finally {
 
       setLoading(false);
@@ -193,9 +191,8 @@ function MyTrips() {
       await loadTrips();
 
     } catch (err) {
-
+      console.error("Delete trip error:", err);
       setError("Unable to delete trip.");
-
     }
   };
 
@@ -219,30 +216,31 @@ function MyTrips() {
 
 
   return (
-
-    <div className="my-trips-page">
+    <main className="my-trips-page">
+      <div className="trips-hero-glow" />
 
       <div className="trips-container">
-
-
         {/* Page Header */}
-
         <div className="trips-header">
+          <span className="trips-hero-badge">
+            <span className="badge-dot" />
+            MY ITINERARIES
+          </span>
 
-          <h1>My Trips</h1>
+          <h1>
+            My <span className="gradient-text">Trips</span>
+          </h1>
 
           <p>
-            Create and manage your travel plans.
+            Create, plan, and organize your personalized travel itineraries.
           </p>
-
         </div>
 
-
         {/* Error */}
-
         {error && (
           <div className="error-box">
-            {error}
+            <span className="error-icon">⚠️</span>
+            <span>{error}</span>
           </div>
         )}
 
@@ -595,7 +593,7 @@ function MyTrips() {
 
       </div>
 
-    </div>
+    </main>
 
   );
 }
