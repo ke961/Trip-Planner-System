@@ -32,10 +32,16 @@ function Navbar() {
         </nav>
 
 
-        {/* CTA */}
-        <Link to="/plan-trip" className="plan-trip-button">
-          Plan a Trip
+        {/* CTA - Plan a Trip with AI Recommendation */}
+        <Link to="/ai-recommendation" className="plan-trip-button">
+          <span className="plan-trip-sparkle">✨</span>
+          <span>Plan a Trip</span>
+          <span className="plan-trip-ai-tag">AI</span>
         </Link>
+
+
+
+
 
       </div>
 
